@@ -51,12 +51,13 @@ public class MainActivity extends AppCompatActivity {
         diceImage = findViewById(R.id.imageView);
         buttonHigher = findViewById(R.id.fabUp);
         buttonLower = findViewById(R.id.fabDown);
+
         // Sets random starting dice
         Dice dice = new Dice(randomNumber());
         diceImage.setImageResource(mImageNames[dice.getDiceNumberOfEyes()]);
         currentDice = dice.getDiceNumberOfEyes();
 
-        // Defines what happens when the user clicks the higher button
+        // When the user clicks the higher button, it checks the dice before and based on that it gives the user a point or resets it.
         buttonHigher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
